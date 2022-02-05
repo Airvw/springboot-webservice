@@ -1,0 +1,39 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.4.1'
+    id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+}
+
+group 'com.jojolud.book'
+version '1.0-SNAPSHOT'
+sourceCompatibility = 1.8
+
+// 의존성 라이브러리를 가져오는 원격 저장소 설정
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+//    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+//    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+
+    implementation('org.springframework.boot:spring-boot-starter-web')
+    implementation('org.springframework.boot:spring-boot-starter-mustache')
+
+    // lombok
+    implementation('org.projectlombok:lombok')
+    annotationProcessor('org.projectlombok:lombok')
+    testImplementation('org.projectlombok:lombok')
+    testAnnotationProcessor('org.projectlombok:lombok')
+
+    implementation('org.springframework.boot:spring-boot-starter-data-jpa')
+    implementation("org.mariadb.jdbc:mariadb-java-client")
+    implementation('com.h2database:h2')
+
+    testImplementation('org.springframework.boot:spring-boot-starter-test')
+}
+
+test {
+    useJUnitPlatform()
+}
