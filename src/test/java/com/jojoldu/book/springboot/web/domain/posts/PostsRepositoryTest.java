@@ -21,19 +21,19 @@ public class PostsRepositoryTest {
     PostsRepository postsRepository;
 
     @AfterEach
-    public void cleanup(){
+    public void cleanUp(){
         postsRepository.deleteAll();
     }
 
     @Test
     public void 게시글저장_불러오기(){
-        String title = "게시글제목";
-        String content = "게시글본문";
+        String title = "Post Title";
+        String content = "Post Content";
 
         postsRepository.save(Posts.builder()
                 .title(title)
                 .content(content)
-                .author("airvw14@gmail.com")
+                .author("Airvw")
                 .build());
 
         List<Posts> postsList = postsRepository.findAll();
