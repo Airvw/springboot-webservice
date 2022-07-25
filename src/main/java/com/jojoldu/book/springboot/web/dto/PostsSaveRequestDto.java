@@ -1,7 +1,6 @@
 package com.jojoldu.book.springboot.web.dto;
 
-import com.fasterxml.jackson.databind.deser.UnresolvedId;
-import com.jojoldu.book.springboot.domain.Posts;
+import com.jojoldu.book.springboot.domain.posts.Posts;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
